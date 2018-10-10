@@ -15,7 +15,7 @@
         "display": {
             "type": "object",
             "additionalProperties": false,
-            "title": "Display properties"
+            "title": "Display properties",
             "patternProperties": {
                 "^(firstperson_righthand|firstperson_lefthand|thirdperson_righthand|thirdperson_lefth  and|gui|head|ground|fixed)$": {
                     "type": "object",
