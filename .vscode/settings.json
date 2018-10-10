@@ -22,27 +22,27 @@
         },
         {
             "fileMatch": ["/playground/advancements/*.json"],
-            "url": "/java/data/advancement_strict.json"
+            "url": "/java/data/advancement.json"
         },
         {
             "fileMatch": ["/playground/loot_tables/*.json"],
-            "url": "/java/data/loot_table_strict.json"
+            "url": "/java/data/loot_table.json"
         },
         {
             "fileMatch": ["/playground/loot_tables/*.json"],
-            "url": "/jta/recipe_strict.json"
+            "url": "/java/recipe.json"
         },
         {
             "fileMatch": ["/playground/tags/functions/*.json"],
-            "url": "/java/data/function_tags_strict.json"
+            "url": "/java/data/function_tag.json"
         },
         {
             "fileMatch": ["/playground/tags/blocks/*.json"],
-            "url": "/java/data/block_tags_strict.json"
+            "url": "/java/data/block_tag.json"
         },
         {
             "fileMatch": ["/playground/tags/items/*.json"],
-            "url": "/java/data/item_tags_strict.json"
+            "url": "/java/data/item_tag.json"
         },
         {
             "fileMatch": ["/playground/pack-mcmeta/*.mcmeta"],

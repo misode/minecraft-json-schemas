@@ -5,7 +5,7 @@
     "properties": {
         "parent": {
             "$ref": "../shared/namespaced_location.json",
-            "title": "Model parent",
+            "title": "Model parent"
         },
         "ambientocclusion": {
             "type": "boolean",
