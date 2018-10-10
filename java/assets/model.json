@@ -2,5 +2,210 @@
     "$schema": "http://json-schema.org/schema#",
     "$id": "https://raw.githubusercontent.com/Levertion/minecraft-json-schema/master/java/assets/model.json",
     "type": "object",
-    "properties": {}
+    "properties": {
+        "parent": {
+            "$ref": "../shared/namespaced_location.json",
+            "title": "Model parent",
+        },
+        "ambientocclusion": {
+            "type": "boolean",
+            "default": true,
+            "title": "Ambient occlusion"
+        },
+        "display": {
+            "type": "object",
+            "additionalProperties": false,
+            "title": "Display properties"
+            "patternProperties": {
+                "^(firstperson_righthand|firstperson_lefthand|thirdperson_righthand|thirdperson_lefth  and|gui|head|ground|fixed)$": {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "title": "Display object",
+                    "properties": {
+                        "rotation": {
+                            "$ref": "#/definitions/rotation"
+                        },
+                        "translation": {
+                            "$ref": "#/definitions/translation"
+                        },
+                        "scale": {
+                            "$ref": "#/definitions/scale"
+                        }
+                    }
+                }
+            }
+        },
+        "textures": {
+            "patternProperties": {
+                "^.+$": {
+                    "$ref": "../shared/namespaced_location.json"
+                }
+            },
+            "properties": {
+                "particle": {
+                    "$ref": "../shared/namespaced_location.json"
+                }
+            }
+        },
+        "elements": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "from": {
+                        "title": "From position",
+                        "$ref": "#/definitions/position"
+                    },
+                    "to": {
+                        "title": "To position",
+                        "$ref": "#/definitions/position"
+                    },
+                    "rotation": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "properties": {
+                            "origin": {
+                                "title": "Rotation origin",
+                                "$ref": "#/definitions/position"
+                            },
+                            "axis": {
+                                "type": "string",
+                                "title": "Axis to rotate around",
+                                "enum": ["x", "y", "z" ]
+                            },
+                            "angle": {
+                                "type": "array",
+                                "minItems": 3,
+                                "maxItems": 3,
+                                "title": "Angle of rotation",
+                                "items": {
+                                    "type": "number",
+                                    "minimum": -45,
+                                    "maximum": 45,
+                                    "multipleOf": 22.5
+                                }
+                            },
+                            "rescale": {
+                                "type": "boolean",
+                                "default": false,
+                                "title": "Scale faces"
+                            }
+                        }
+                    },
+                    "shade": {
+                        "type": "boolean",
+                        "default": true,
+                        "title": "Shadows"
+                    },
+                    "faces": {
+                        "type": "object",
+                        "additionalProperties": false,
+                        "patternProperties": {
+                            "^(up|down|north|east|south|west)$": {
+                                "type": "object",
+                                "additionalProperties": false,
+                                "properties": {
+                                    "uv": {
+                                        "type": "array",
+                                        "minItems": 4,
+                                        "maxItems": 4,
+                                        "default": [
+                                            0, 0, 16, 16
+                                        ],
+                                        "title": "Area of the texture",
+                                        "description": "Using the following format: [x1, y1, x2, y2]. Swapping x1 and x2 causes to texture to be flipped.",
+                                        "items": {
+                                            "type": "number",
+                                            "minimum": 0,
+                                            "maximum": 16
+                                        }
+                                    },
+                                    "texture": {
+                                        "type": "string",
+                                        "pattern": "^#.+$",
+                                        "title": "Texture of the face"
+                                    },
+                                    "cullface": {
+                                        "type": "string",
+                                        "title": "Cullface",
+                                        "enum": [
+                                            "up",
+                                            "down",
+                                            "north",
+                                            "east",
+                                            "south",
+                                            "west"
+                                        ]
+                                    },
+                                    "rotation": {
+                                        "type": "number",
+                                        "minimum": 0,
+                                        "maximum": 270,
+                                        "multipleOf": 90,
+                                        "default": 0,
+                                        "title": "Rotation of the texture"
+                                    },
+                                    "tintindex": {
+                                        "type": "integer",
+                                        "minimum": 0,
+                                        "default": 0,
+                                        "title": "Tint of the texture",
+                                        "description": "If unspecified or 0, no tint will be applied. Not all blocks have a tint."
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "rotation": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "default": [0.0, 0.0, 0.0],
+            "title": "Rotation of the model",
+            "items": {
+                "type": "number",
+                "minimum": 0
+            }
+        },
+        "translation": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "default": [0, 0, 0],
+            "title": "Position of the model",
+            "items": {
+                "type": "number",
+                "minimum": -80,
+                "maximum": 80
+            }
+        },
+        "scale": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "default": [1.0, 1.0, 1.0],
+            "title": "Scale of the model",
+            "items": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 4
+            }
+        },
+        "position": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 3,
+            "default": [0.0, 0.0, 0.0],
+            "items": {
+                "type": "number",
+                "minimum": -16,
+                "maximum": 32
+            }
+        }
+    }
 }
