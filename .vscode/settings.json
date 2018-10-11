@@ -53,8 +53,8 @@
             "url": "/java/data/item_tag.json"
         },
         {
-            "fileMatch": ["/playground/pack-mcmeta/*.mcmeta"],
-            "url": "/java/data/pack.mcmeta.json"
+            "fileMatch": ["/playground/resource-pack-mcmeta/*.mcmeta"],
+            "url": "/java/assets/pack.mcmeta.json"
         }
     ],
     "files.associations": {
