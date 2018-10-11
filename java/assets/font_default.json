@@ -1,0 +1,134 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "https://raw.githubusercontent.com/Levertion/minecraft-json-schema/master/java/assets/font_default.json",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "providers": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "additionalProperties": "false",
+                "required": ["type"],
+                "oneOf": [
+                    {
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "pattern": "^bitmap$",
+                                "default": "bitmap",
+                                "title": "Bitmap type"
+                            },
+                            "file": {
+                                "$ref": "../shared/namespaced_location.json",
+                                "title": "Bitmap image",
+                                "description": "Namespaced path within textures"
+                            },
+                            "ascent": {
+                                "type": "integer",
+                                "title": "Height above the line in pixels. Cannot be larger than \"height\""
+                            },
+                            "height": {
+                                "type": "integer",
+                                "title": "Total height in pixels"
+                            },
+                            "chars": {
+                                "type": "array",
+                                "minItems": 1,
+                                "title": "Character list",
+                                "description": "Strings containing characters for each row in the texture, must be same length, padded with \\u0000 meaning no character",
+                                "items": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    },
+                    {
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "pattern": "^legacy_unicode$",
+                                "default": "legacy_unicode",
+                                "title": "Unicode type"
+                            },
+                            "sizes": {
+                                "$ref": "../shared/namespaced_location.json",
+                                "default": "minecraft:font/glyph_sizes.bin",
+                                "title": "Glyph sizes",
+                                "description": "Namespaced path within all assets leading to glyph_sizes.bin like file"
+                            },
+                            "template": {
+                                "type": "string",
+                                "pattern": "^(?:[0-9a-z_\\.-]+:)?[0-9a-z_\\%/\\.-]+$",
+                                "default": "minecraft:font/unicode_page_%s.png",
+                                "title": "Texture template",
+                                "description": "Namespaced path within textures, %s replaced by the first byte of character code in hex format"
+                            }
+                        }
+                    },
+                    {
+                        "properties": {
+                            "type": {
+                                "type": "string",
+                                "pattern": "^ttf$",
+                                "default": "ttf",
+                                "title": "TTF type"
+                            },
+                            "file": {
+                                "$ref": "../shared/namespaced_location.json",
+                                "title": "Font file",
+                                "description": "Namespaced path within fonts (NOT textures/fonts)"
+                            },
+                            "shift": {
+                                "type": "array",
+                                "minItems": 2,
+                                "maxItems": 2,
+                                "title": "Shift font",
+                                "description": "Needs 2 values. The first value is for horizontal shift. The second value is for vertical shift.",
+                                "items": {
+                                    "type": "number",
+                                    "default": 0
+                                }
+                            },
+                            "size": {
+                                "type": "number",
+                                "minimum": 0,
+                                "default": 11.0,
+                                "title": "Font size",
+                                "description": "Font size to render at"
+                            },
+                            "oversample": {
+                                "type": "number",
+                                "default": 2.0,
+                                "title": "Font resolution",
+                                "description": "Resolution to render at"
+                            },
+                            "skip": {
+                                "title": "Skip characters",
+                                "description": "String or array of strings of characters to exclude",
+                                "oneOf": [
+                                    {
+                                        "type": "string",
+                                        "minLength": 1,
+                                        "maxLength": 1,
+                                        "description": "String character to exclude",
+                                    },
+                                    {
+                                        "type": "array",
+                                        "minItems": 1,
+                                        "items": {
+                                            "type": "string",
+                                            "minLength": 1,
+                                            "maxLength": 1,
+                                            "description": "Array of characters to exclude",
+                                        }
+                                    }
+                                ]
+                            }
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

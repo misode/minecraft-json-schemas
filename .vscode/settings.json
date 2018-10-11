@@ -25,6 +25,10 @@
             "url": "/java/assets/sounds.json"
         },
         {
+            "fileMatch": ["/playground/font/default.json"],
+            "url": "/java/assets/font_default.json"
+        },
+        {
             "fileMatch": ["/playground/advancements/*.json"],
             "url": "/java/data/advancement.json"
         },
