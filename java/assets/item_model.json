@@ -1,7 +1,6 @@
 {
     "$schema": "http://json-schema.org/schema#",
     "$id": "https://raw.githubusercontent.com/Levertion/minecraft-json-schema/master/java/assets/item_model.json",
-    "additionalProperties": false,
     "properties": {
         "parent": {
             "$ref": "model.json#/definitions/parent"
