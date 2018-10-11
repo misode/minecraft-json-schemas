@@ -4,6 +4,12 @@
     "type": "object",
     "additionalProperties": false,
     "properties": {
+        "replace": {
+            "type": "boolean",
+            "default": false,
+            "title": "Replace tags",
+            "description": "Whether or not this tag should replace tags from lower priority datapacks (true), or append (false)"
+        },
         "values": {
             "type": "array",
             "title": "Values of this block tag",
