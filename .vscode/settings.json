@@ -13,8 +13,12 @@
             "url": "/java/assets/blockstates.json"
         },
         {
-            "fileMatch": ["/playground/model/*.json"],
-            "url": "/java/assets/model.json"
+            "fileMatch": ["/playground/models/item/*.json"],
+            "url": "/java/assets/item_model.json"
+        },
+        {
+            "fileMatch": ["/playground/models/block/*.json"],
+            "url": "/java/assets/block_model.json"
         },
         {
             "fileMatch": ["/playground/sounds/*.json"],

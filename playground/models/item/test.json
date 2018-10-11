@@ -1,4 +1,5 @@
 {
+    
     "parent" : "s",
     "ambientocclusion": true,
     "display": {
@@ -63,6 +64,15 @@
                     "tintindex": 4
                 }
             }
+        }
+    ],
+    "overrides": [
+        {
+            "predicate": {
+                "damage": 0,
+                "damaged": 1
+            },
+            "model": "minecraft:textures/item/goo"
         }
     ]
 }

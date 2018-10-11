@@ -1,0 +1,22 @@
+{
+    "$schema": "http://json-schema.org/schema#",
+    "$id": "https://raw.githubusercontent.com/Levertion/minecraft-json-schema/master/java/assets/model.json",
+    "additionalProperties": false,
+    "properties": {
+        "parent": {
+            "$ref": "model.json#/definitions/parent"
+        },
+        "ambientocclusion": {
+            "$ref": "model.json#/definitions/ambientocclusion"
+        },
+        "display": {
+            "$ref": "model.json#/definitions/display"
+        },
+        "textures": {
+            "$ref": "model.json#/definitions/textures"
+        },
+        "elements": {
+            "$ref": "model.json#/definitions/elements"
+        }
+    }
+}
