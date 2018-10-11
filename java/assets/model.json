@@ -84,16 +84,11 @@
                                 "enum": ["x", "y", "z" ]
                             },
                             "angle": {
-                                "type": "array",
-                                "minItems": 3,
-                                "maxItems": 3,
-                                "title": "Angle of rotation",
-                                "items": {
-                                    "type": "number",
-                                    "minimum": -45,
-                                    "maximum": 45,
-                                    "multipleOf": 22.5
-                                }
+                                "type": "number",
+                                "minimum": -45,
+                                "maximum": 45,
+                                "multipleOf": 22.5,
+                                "title": "Angle of rotation"
                             },
                             "rescale": {
                                 "type": "boolean",
