@@ -111,7 +111,7 @@
                                         "type": "string",
                                         "minLength": 1,
                                         "maxLength": 1,
-                                        "description": "String character to exclude",
+                                        "description": "String character to exclude"
                                     },
                                     {
                                         "type": "array",
@@ -120,7 +120,7 @@
                                             "type": "string",
                                             "minLength": 1,
                                             "maxLength": 1,
-                                            "description": "Array of characters to exclude",
+                                            "description": "Array of characters to exclude"
                                         }
                                     }
                                 ]
